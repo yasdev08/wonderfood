@@ -1,39 +1,42 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Search, ShoppingCart, Menu, X } from 'lucide-react'
-
+import { useState } from "react";
+import { Search, ShoppingCart, Menu, X } from "lucide-react";
+import Image from "next/image";
+import "@/public/logo.jpg";
 interface HeaderProps {
-  onSearch: (term: string) => void
-  cartItemsCount: number
-  onCartClick: () => void
+  onSearch: (term: string) => void;
+  cartItemsCount: number;
+  onCartClick: () => void;
 }
 
 export function Header({ onSearch, cartItemsCount, onCartClick }: HeaderProps) {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [searchValue, setSearchValue] = useState('')
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setSearchValue(value)
-    onSearch(value)
-  }
+    const value = e.target.value;
+    setSearchValue(value);
+    onSearch(value);
+  };
 
   const handleSearchClose = () => {
-    setIsSearchOpen(false)
-    setSearchValue('')
-    onSearch('')
-  }
+    setIsSearchOpen(false);
+    setSearchValue("");
+    onSearch("");
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-primary text-primary-foreground border-b border-accent/20">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-accent">WONDER</span> FOOD&apos;S
-          </h1>
-          <p className="text-xs text-primary-foreground/70">Maraval</p>
+          <Image
+            alt="Wonder food's logo"
+            src="logo1.png"
+            width={100}
+            height={100}
+          />
         </div>
 
         {/* Search Bar - Desktop */}
@@ -70,7 +73,11 @@ export function Header({ onSearch, cartItemsCount, onCartClick }: HeaderProps) {
           className="md:hidden p-2 hover:bg-primary-foreground/10 rounded-lg transition-colors"
           aria-label="Search"
         >
-          {isSearchOpen ? <X className="w-6 h-6" /> : <Search className="w-6 h-6" />}
+          {isSearchOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Search className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -91,5 +98,5 @@ export function Header({ onSearch, cartItemsCount, onCartClick }: HeaderProps) {
         </div>
       )}
     </header>
-  )
+  );
 }

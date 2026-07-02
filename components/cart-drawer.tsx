@@ -83,7 +83,7 @@ export function CartDrawer({
         <div className="flex items-center justify-between p-6 border-b border-border">
           <div className="flex items-center gap-2">
             <ShoppingCart className="w-6 h-6 text-accent" />
-            <h2 className="text-xl font-bold text-foreground">Your Cart</h2>
+            <h2 className="text-xl font-bold text-foreground">Votre Panier</h2>
           </div>
           <button
             onClick={onClose}
@@ -99,7 +99,7 @@ export function CartDrawer({
           {items.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingCart className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-              <p className="text-muted-foreground">Your cart is empty</p>
+              <p className="text-muted-foreground">Votre panier est vide.</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -123,7 +123,7 @@ export function CartDrawer({
                     </span>
                     <button
                       onClick={() => onRemove(index)}
-                      className="p-2 hover:bg-destructive/20 text-destructive rounded-lg transition-colors"
+                      className="p-2 hover:bg-destructive/20 text-accent-foreground rounded-lg transition-colors"
                       aria-label={`Remove ${item.name}`}
                     >
                       <Trash2 className="w-4 h-4" />
@@ -151,7 +151,7 @@ export function CartDrawer({
                   htmlFor="customer-details"
                   className="text-sm font-medium text-foreground"
                 >
-                  Delivery details / location
+                  Détails de livraison / Localisation
                 </label>
                 <textarea
                   id="customer-details"
@@ -166,13 +166,13 @@ export function CartDrawer({
                 onClick={handleCheckout}
                 className="w-full py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors active:scale-95"
               >
-                Send to WhatsApp
+                Commandez Maintenant !{" "}
               </button>
               <button
                 onClick={onClear}
-                className="w-full py-3 bg-destructive/10 text-destructive font-semibold rounded-lg hover:bg-destructive/20 transition-colors"
+                className="w-full py-3 bg-destructive text-white font-semibold rounded-lg hover:bg-destructive/20 transition-colors"
               >
-                Clear Cart
+                Vider le panier
               </button>
             </div>
           </div>

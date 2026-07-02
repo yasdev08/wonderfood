@@ -7,6 +7,7 @@ import { CategoryNav } from "@/components/category-nav";
 import { MenuSection } from "@/components/menu-section";
 import { CartDrawer } from "@/components/cart-drawer";
 import { FloatingCartButton } from "@/components/floating-cart-button";
+import { Footer } from "@/components/footer";
 
 export interface MenuItem {
   id: string;
@@ -918,7 +919,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-gradient-to-br from-background via-background/90 to-background/70">
       <Header
         onSearch={setSearchTerm}
         cartItemsCount={cart.length}
@@ -972,6 +973,8 @@ export default function Home() {
         itemsCount={cart.length}
         onClick={() => setIsCartOpen(!isCartOpen)}
       />
+
+      <Footer />
     </main>
   );
 }

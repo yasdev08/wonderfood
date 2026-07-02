@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { MenuItem } from '@/app/page'
-import { FoodCard } from './food-card'
+import { MenuItem } from "@/app/page";
+import { FoodCard } from "./food-card";
 
 interface MenuSectionProps {
-  category: string
-  items: MenuItem[]
-  onAddToCart: (item: MenuItem) => void
+  category: string;
+  items: MenuItem[];
+  onAddToCart: (item: MenuItem) => void;
 }
 
-export function MenuSection({ category, items, onAddToCart }: MenuSectionProps) {
+export function MenuSection({
+  category,
+  items,
+  onAddToCart,
+}: MenuSectionProps) {
   return (
     <section className="mb-16">
       <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 pb-4 border-b-2 border-accent/50">
         {category}
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {items.map((item) => (
-          <FoodCard
-            key={item.id}
-            item={item}
-            onAddToCart={onAddToCart}
-          />
+          <FoodCard key={item.id} item={item} onAddToCart={onAddToCart} />
         ))}
       </div>
     </section>
-  )
+  );
 }

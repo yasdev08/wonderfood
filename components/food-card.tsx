@@ -23,7 +23,7 @@ export function FoodCard({ item, onAddToCart }: FoodCardProps) {
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       {/* Image Placeholder */}
-      <div className="aspect-square bg-linear-to-br from-primary/20 to-accent/10 overflow-hidden relative">
+      <div className="aspect-video bg-linear-to-br from-primary/20 to-accent/10 overflow-hidden relative">
         <Image
           src={nutellaImage}
           alt={item.name}
