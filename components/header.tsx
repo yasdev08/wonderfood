@@ -49,7 +49,7 @@ export function Header({ onSearch, cartItemsCount, onCartClick }: HeaderProps) {
               onChange={handleSearchChange}
               className="w-full px-4 py-2 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:ring-2 focus:ring-accent"
             />
-            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground/50 pointer-events-none" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground/50 " />
           </div>
         </div>
 
@@ -93,7 +93,7 @@ export function Header({ onSearch, cartItemsCount, onCartClick }: HeaderProps) {
               autoFocus
               className="w-full px-4 py-2 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:ring-2 focus:ring-accent"
             />
-            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground/50 pointer-events-none" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground/50 " />
           </div>
         </div>
       )}
